@@ -7,7 +7,7 @@ list(APPEND VIOLET_TEST_SRC
 
 add_executable(violet-engine-test ${VIOLET_TEST_SRC})
 
-target_compile_definitions(violet-engine-test PRIVATE VIOLET_TEST_DEBUG=$<CONFIG:Debug>)
+target_compile_definitions(violet-engine-test PRIVATE $<$<CONFIG:Debug>:VIOLET_TEST_DEBUG>)
 
 if(WIN32)
 	set_target_properties(violet-engine-test PROPERTIES WIN32_EXECUTABLE $<CONFIG:Release>)
