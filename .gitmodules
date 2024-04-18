@@ -1,0 +1,3 @@
+[submodule "violet-engine"]
+	path = violet-engine
+	url = https://github.com/devon-artmeier/violet-engine.git
