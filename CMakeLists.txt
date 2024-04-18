@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(violet-engine-test LANGUAGES C CXX)
 
-add_library(violet-engine-test
+add_executable(violet-engine-test
 	"source/test.cpp"
 )
 
