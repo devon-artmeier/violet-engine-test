@@ -1,16 +1,18 @@
 cmake_minimum_required(VERSION 3.16)
 project(violet-engine-test LANGUAGES C CXX)
 
-list(APPEND VIOLET_SRC
+list(APPEND VIOLET_TEST_SRC
 	"source/test.cpp"
 )
 
-if(WIN32 AND NOT CONFIG:Debug)
-	add_executable(violet-engine-test WIN32 ${VIOLET_SRC})
-else()
-	add_executable(violet-engine-test ${VIOLET_SRC})
+add_executable(violet-engine-test ${VIOLET_TEST_SRC})
+
+target_compile_definitions(violet-engine-test PRIVATE VIOLET_TEST_DEBUG=$<CONFIG:Debug>)
+
+if(WIN32)
+	set_target_properties(violet-engine-test PROPERTIES WIN32_EXECUTABLE $<CONFIG:Release>)
 endif()
-	
-add_subdirectory("violet-engine" EXCLUDE_FROM_ALL)
+
+add_subdirectory("violet-engine")
 target_link_libraries(violet-engine-test PRIVATE violet-engine)
 target_include_directories(violet-engine-test PRIVATE "violet-engine/include")
