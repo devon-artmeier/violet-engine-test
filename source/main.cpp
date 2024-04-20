@@ -1,20 +1,17 @@
 #include <violet_engine.hpp>
 
-namespace Violet
+void GameInit()
 {
-    void GameInit()
-    {
-        OpenSound("test", "test.ogg");
-        LoopSound("test", 2);
-    }
+    Violet::OpenSound("test", "test.ogg");
+    Violet::PlaySound("test", 2);
+}
 
-    void GameUpdate()
-    {
+void GameUpdate()
+{
 
-    }
+}
 
-    void GameClose()
-    {
+void GameClose()
+{
 
-    }
 }
