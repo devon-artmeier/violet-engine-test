@@ -2,6 +2,8 @@
 
 void GameInit()
 {
+    Violet::SetMasterVolume(50);
+
     Violet::OpenSound("test1", "yeah.wav");
     Violet::OpenSound("test2", "honk.mp3");
     Violet::OpenSound("test3", "test.ogg");
