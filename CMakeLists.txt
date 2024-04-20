@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(violet-engine-test LANGUAGES C CXX)
 
 list(APPEND VIOLET_TEST_SRC
-	"source/test.cpp"
+	"source/main.cpp"
 )
 
 add_executable(violet-engine-test ${VIOLET_TEST_SRC})
