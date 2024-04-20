@@ -5,7 +5,7 @@ namespace Violet
     void GameInit()
     {
         OpenSound("test", "test.ogg");
-        LoopSound("test", 1);
+        LoopSound("test", 2);
     }
 
     void GameUpdate()
