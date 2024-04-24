@@ -4,7 +4,7 @@ void GameInit()
 {
     Violet::SetMasterVolume(50);
 
-    Violet::LoadSound("yeah", "yeah.wav");
+    Violet::LoadSound("yeah", "data/yeah.wav");
     Violet::PlaySound("yeah", 0);
 }
 

@@ -16,3 +16,6 @@ endif()
 add_subdirectory("violet-engine")
 target_link_libraries(violet-engine-test PRIVATE violet-engine)
 target_include_directories(violet-engine-test PRIVATE "violet-engine/include")
+
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/data" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
+file(COPY "${CMAKE_CURRENT_BINARY_DIR}/violet-engine/dependencies/SDL/SDL3.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
