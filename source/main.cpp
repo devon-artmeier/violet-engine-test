@@ -16,7 +16,7 @@ void GameUpdate()
     static float angle = 0.0;
     static float scale = 0.0f;
     Violet::DrawSprite("sprites", 0,
-                       { 0, Violet::GetWindowWidthPixels() / 2.0f, Violet::GetWindowHeightPixels() / 2.0f, scale, scale, angle++});
+                       { 0, Violet::GetWindowWidthPixels() / 2.0f, Violet::GetWindowHeightPixels() / 2.0f, scale, scale, angle++, Violet::TextureFilter::Nearest});
     scale += 0.005f;
 }
 
