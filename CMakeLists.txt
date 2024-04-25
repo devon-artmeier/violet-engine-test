@@ -17,5 +17,7 @@ add_subdirectory("violet-engine")
 target_link_libraries(violet-engine-test PRIVATE violet-engine)
 target_include_directories(violet-engine-test PRIVATE "violet-engine/include")
 
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/data" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
-file(COPY "${CMAKE_CURRENT_BINARY_DIR}/violet-engine/dependencies/SDL/SDL3.dll" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
+add_custom_command(TARGET violet-engine-test POST_BUILD  
+    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_BINARY_DIR}/violet-engine/dependencies/SDL/SDL3.dll" "${CMAKE_CURRENT_BINARY_DIR}"
+    COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/data" "${CMAKE_CURRENT_BINARY_DIR}/data"
+)
