@@ -2,13 +2,13 @@
 
 void GameInit()
 {
-    Violet::LoadTexture("texture", "data/texture.png");
-    Violet::LoadSpriteSheet("sprites", "data/sprites.spr", "texture");
-
     Violet::SetMasterVolume(50);
 
-    Violet::LoadSound("yeah", "data/yeah.wav");
-    Violet::PlaySound("yeah", 0);
+    Violet::LoadTexture    ("texture", "data/texture.png");
+    Violet::LoadSpriteSheet("sprites", "data/sprites.spr", "texture");
+    Violet::LoadSound      ("yeah",    "data/yeah.wav");
+
+    Violet::PlaySound("yeah");
 }
 
 void GameUpdate()
