@@ -2,13 +2,16 @@
 
 void GameInit()
 {
-    Violet::SetMasterVolume(50);
+    Violet::SetMasterVolume(0.25f);
 
     Violet::LoadTexture    ("texture", "data/texture.png");
     Violet::LoadSpriteSheet("sprites", "data/sprites.spr", "texture");
     Violet::LoadSound      ("yeah",    "data/yeah.wav");
+    Violet::LoadSound      ("cirno",   "data/cirno.ogg");
 
-    Violet::PlaySound("yeah");
+    Violet::SetSoundLoop   ("cirno", 255387, 3949028);
+    Violet::LoopSound      ("cirno");    
+    Violet::PlaySound      ("yeah");
 }
 
 void GameUpdate()
