@@ -7,6 +7,7 @@ void GameInit()
     Violet::LoadTexture    ("texture", "data/texture.png");
     Violet::LoadSpriteSheet("sprites", "data/sprites.spr", "texture");
     Violet::LoadSound      ("music",   "data/music.ogg");
+    Violet::LoadFont       ("font",    "data/font.ttf");
 
     Violet::LoopSound      ("music");
 }
@@ -26,6 +27,9 @@ void GameUpdate()
     Violet::DrawSprite     ("sprites", 0, 0, x + (sine_x * x_off), y, scale_x, scale_y, angle++);
     Violet::SetSoundPanning("music", sine_x);
     Violet::SetSoundPitch  ("music", pitch);
+
+    Violet::DrawText("font", 64, "Hello World!", 0, 34, 66, { 0, 0, 0, 255 });
+    Violet::DrawText("font", 64, "Hello World!", 0, 32, 64, { 255, 255, 255, 255 });
 }
 
 void GameClose()
