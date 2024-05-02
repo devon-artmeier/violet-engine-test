@@ -1,4 +1,4 @@
-#include <violet_engine.hpp>
+﻿#include <violet_engine.hpp>
 
 void GameInit()
 {
