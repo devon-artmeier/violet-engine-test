@@ -20,18 +20,21 @@ void GameUpdate()
     static float y     = GetWindowHeightPixels() / 2.0f;
     static float x_off = GetWindowWidthPixels() / 4.0f;
     static float angle = 0.0f;
-    
+
     float sine_x  = Math::SinDegrees(angle);
     float scale_x = ((Math::SinDegrees(angle * 4) + 1.0f) / 4.0f) + 0.75f;
     float scale_y = ((Math::CosDegrees(angle * 4) + 1.0f) / 4.0f) + 0.75f;
     float pitch   = ((Math::SinDegrees(angle) + 1.0f) / 7.0f) + 0.85f;
 
-    DrawSprite     ("sprites", 0, 0, Vector2D(x + (sine_x * x_off), y), angle++, Vector2D(scale_x, scale_y));
+    int i = 0;
+
+
+    DrawSprite     ("sprites", 0, 0, Vector2(x + (sine_x * x_off), y), angle++, Vector2(scale_x, scale_y));
     SetSoundPanning("music", sine_x);
     SetSoundPitch  ("music", pitch);
 
-    DrawText("font", 64, "Hello World!", 0, Vector2D(34, 34), { 0, 0, 0, 255 });
-    DrawText("font", 64, "Hello World!", 0, Vector2D(32, 32), { 255, 255, 255, 255 });
+    DrawText("font", 64, "Hello World!", 0, Vector2(34, 34), { 0, 0, 0, 255 });
+    DrawText("font", 64, "Hello World!", 0, Vector2(32, 32), { 255, 255, 255, 255 });
 }
 
 void GameClose()
