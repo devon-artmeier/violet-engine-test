@@ -26,9 +26,6 @@ void GameUpdate()
     float scale_y = ((Math::CosDegrees(angle * 4) + 1.0f) / 4.0f) + 0.75f;
     float pitch   = ((Math::SinDegrees(angle) + 1.0f) / 7.0f) + 0.85f;
 
-    int i = 0;
-
-
     DrawSprite     ("sprites", 0, 0, Vector2(x + (sine_x * x_off), y), angle++, Vector2(scale_x, scale_y));
     SetSoundPanning("music", sine_x);
     SetSoundPitch  ("music", pitch);
