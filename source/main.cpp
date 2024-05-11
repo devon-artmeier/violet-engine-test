@@ -30,8 +30,8 @@ void GameUpdate()
     SetSoundPanning("music", sine_x);
     SetSoundPitch  ("music", pitch);
 
-    DrawText("font", 64, "Hello World!", 0, Vector2(34, 34), { 0, 0, 0, 255 });
-    DrawText("font", 64, "Hello World!", 0, Vector2(32, 32), { 255, 255, 255, 255 });
+    DrawText("font", 64, "Hello World!", 0, Vector2(34, 34), { 0.0f, 0.0f, 0.0f, 1.0f });
+    DrawText("font", 64, "Hello World!", 0, Vector2(32, 32), { 1.0f, 1.0f, 1.0f, 1.0f });
 }
 
 void GameClose()
